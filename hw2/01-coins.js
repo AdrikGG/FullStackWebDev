@@ -20,7 +20,17 @@ const calculateChange = (input) => {
   input -= nickels * 5;
   const pennies = Math.floor(input / 1);
 
-  const resp = dollars + " dollars, " + quarters + " quarters, " + dimes + " dimes, " + nickels + " nickels, " + pennies + " pennies";
+  const resp =
+    dollars +
+    " dollars, " +
+    quarters +
+    " quarters, " +
+    dimes +
+    " dimes, " +
+    nickels +
+    " nickels, " +
+    pennies +
+    " pennies";
   return resp;
 };
 
