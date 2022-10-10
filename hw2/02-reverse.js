@@ -1,25 +1,31 @@
 /** Exercise 02 - Reverse **/
 
-const input = document.getElementById("input");
-const submit = document.getElementById("reverse");
+const button = document.getElementById("reverse");
 
-const reverse = (input) => {
+button.onclick = function() {
+    const input = document.getElementById("input").value;
+    const response = document.getElementById("response");
+
     if (isNaN(input)) {
-        return "Error: Input must be a number";
+        response.style.color = "red";
+        response.innerText = "Error: Input must be a number"
+        return;
     }
 
-    let length = String(input).replace("-", "").length;
+    let inputString = input.toString();
+    const length = inputString.replace("-", "").replace(".", "").length;
     if (length !== 8) {
-        return "Error: Please input an 8-digit number";
-    }
+        response.style.color = "red";
+        response.innerText = "Error: Please input an 8-digit number"
+        return;
+    }  
 
     let reversed = 0;
-    let currDigit = 0;
-    while (input) {
-        currDigit = input % 10;
-        reversed = (reversed * 10) + currDigit;
-        input = Math.floor(input / 10);
-    }
+    let sign = inputString.slice(0, 1);
+    inputString = inputString.slice(1);
+    reversed = inputString.split("").reverse().join("");
+    reversed = sign + reversed;
 
-    return input + " --> " + reversed;
+    response.style.color = "green";
+    response.innerText = input + " --> " + reversed;
 }
