@@ -12,9 +12,8 @@ async function getData(url) {
     const ol = document.getElementById("results");
     for (let country of json) {
       const li = document.createElement("li");
-      li.innerText = `${
-        country.name.common
-      } - ${country.population.toLocaleString("en-us")}`;
+      li.innerText = `${country.name.common} - 
+      ${country.population.toLocaleString("en-us")}`;
       ol.appendChild(li);
     }
   } else {
