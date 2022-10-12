@@ -16,9 +16,11 @@
       <h1 class="mt-2 mb-4">Contact Form</h1>
       <label for="namefield" class="form-label fw-bold">Name *</label>
       <input id="namefield" class="form-control" required />
+      <label for="emailfield" id="nameerror" class="form-label" style="color: red;" hidden></label>
       <br />
       <label for="emailfield" class="form-label fw-bold">Email *</label>
       <input type="email" id="emailfield" class="form-control" required />
+      <label for="emailfield" id="emailerror" class="form-label" style="color: red;" hidden></label>
       <br />
       <label for="message" class="form-label fw-bold">
         Submit your message:
@@ -38,8 +40,7 @@
       <br />
       <div class="row">
         <div class="col d-grid" style="padding-right: 2px">
-          <!-- if type="submit", page reloads and console clears on click -->
-          <button type="button" class="btn btn-primary" id="submit">
+          <button type="submit" class="btn btn-primary" id="submit">
             Submit
           </button>
         </div>
