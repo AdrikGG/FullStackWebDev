@@ -21,7 +21,10 @@ button.onclick = function () {
   }
 
   let reversed = 0;
-  let sign = inputString.slice(0, 1);
+  let sign = "";
+  if (input < 0) {
+    sign = inputString.slice(0, 1);
+  }
   inputString = inputString.slice(1);
   reversed = inputString.split("").reverse().join("");
   reversed = sign + reversed;
