@@ -1,7 +1,37 @@
 /** Exercise 01 - Coins **/
 
 const calculateChange = (input) => {
-  // Add your code here
+  if (input > 10) {
+    return "Input is too high! ($10 limit)";
+  }
+  if (isNaN(input)) {
+    return "Input must be a number!";
+  }
+
+  input = Math.floor(input * 100);
+
+  const dollars = Math.floor(input / 100);
+  input -= dollars * 100;
+  const quarters = Math.floor(input / 25);
+  input -= quarters * 25;
+  const dimes = Math.floor(input / 10);
+  input -= dimes * 10;
+  const nickels = Math.floor(input / 5);
+  input -= nickels * 5;
+  const pennies = Math.floor(input / 1);
+
+  const resp =
+    dollars +
+    " dollars, " +
+    quarters +
+    " quarters, " +
+    dimes +
+    " dimes, " +
+    nickels +
+    " nickels, " +
+    pennies +
+    " pennies";
+  return resp;
 };
 
 // Sample Test Cases
